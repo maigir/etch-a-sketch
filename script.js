@@ -22,6 +22,12 @@ function createGrid(size) {
   }
 }
 
+function resetContainer() {
+  createGrid(DEFAULT_GRID);
+}
+
+// function rainbowColors() {}
+
 gridBtn.addEventListener('click', () => {
   const grids = +prompt('Enter number of grids between 16-100: ');
   if (grids < 16 || grids > 100) {
@@ -31,8 +37,5 @@ gridBtn.addEventListener('click', () => {
   createGrid(grids);
 });
 
-function resetContainer() {
-  createGrid(DEFAULT_GRID);
-}
-
 resetBtn.addEventListener('click', resetContainer);
+// rainbowBtn.addEventListener('click');
