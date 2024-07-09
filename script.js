@@ -4,7 +4,7 @@ const containerForGrids = document.querySelector('.container-grids');
 const gridBtn = document.querySelector('.grids-btn');
 const resetBtn = document.querySelector('.reset-btn');
 const rainbowBtn = document.querySelector('.rainbow-btn');
-const opacityBtn = document.querySelector('.opacity-btn');
+const eraserBtn = document.querySelector('.eraser-btn');
 const blackBtn = document.querySelector('.black-btn');
 
 const DEFAULT_GRID = 16;
@@ -60,6 +60,15 @@ function blackGrids() {
   });
 }
 
+function eraserGrid() {
+  const blackGrids = document.querySelectorAll('.divs');
+  blackGrids.forEach((divs) => {
+    divs.addEventListener('mouseover', () => {
+      divs.style.backgroundColor = 'white';
+    });
+  });
+}
+
 gridBtn.addEventListener('click', () => {
   const grids = +prompt('Enter number of grids between 16-100: ');
   if (grids < 16 || grids > 100) {
@@ -71,5 +80,5 @@ gridBtn.addEventListener('click', () => {
 
 resetBtn.addEventListener('click', resetGrid);
 rainbowBtn.addEventListener('click', rainbowColors);
-// opacityBtn.addEventListener('click', changeOpacity);
+eraserBtn.addEventListener('click', eraserGrid);
 blackBtn.addEventListener('click', blackGrids);
