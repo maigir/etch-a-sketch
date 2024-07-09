@@ -3,7 +3,7 @@
 const containerForGrids = document.querySelector('.container-grids');
 const gridBtn = document.querySelector('.grids-btn');
 const resetBtn = document.querySelector('.reset-btn');
-const eraseBtn = document.querySelector('.erase-btn');
+const rainbowBtn = document.querySelector('.rainbow-btn');
 const DEFAULT_GRID = 16;
 
 // Creating grids

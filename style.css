@@ -18,7 +18,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .container {
@@ -44,9 +43,13 @@ body {
   flex-wrap: wrap;
 }
 
+.btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
 button {
-  position: absolute;
-  top: 20px;
+  margin: 20px 20px;
   font-family: inherit;
   font-size: 1.2rem;
   border-radius: 16px;
@@ -64,13 +67,8 @@ button:active {
   transform: scale(0.9);
 }
 
-.reset-btn {
-  top: 92%;
-}
-
-.erase-btn {
-  top: 92%;
-  right: 30%;
+.rainbow-btn {
+  margin-top: 300px;
 }
 
 .divs {
