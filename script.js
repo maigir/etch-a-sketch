@@ -4,9 +4,14 @@ const containerForGrids = document.querySelector('.container-grids');
 const gridBtn = document.querySelector('.grids-btn');
 const resetBtn = document.querySelector('.reset-btn');
 const rainbowBtn = document.querySelector('.rainbow-btn');
+const opacityBtn = document.querySelector('.opacity-btn');
+
 const DEFAULT_GRID = 16;
 
-// Creating grids
+document.addEventListener('DOMContentLoaded', () => {
+  resetContainer();
+});
+
 function createGrid(size) {
   containerForGrids.innerHTML = '';
 
@@ -26,7 +31,7 @@ function resetContainer() {
   createGrid(DEFAULT_GRID);
 }
 
-// function rainbowColors() {}
+function rainbowColors() {}
 
 gridBtn.addEventListener('click', () => {
   const grids = +prompt('Enter number of grids between 16-100: ');
