@@ -32,13 +32,27 @@ function defaultGrid() {
 }
 
 function resetGrid() {
-  const div = document.querySelectorAll('.divs');
-  div.forEach((divs) => {
+  const resetDivs = document.querySelectorAll('.divs');
+  resetDivs.forEach((divs) => {
     divs.style.backgroundColor = 'white';
   });
 }
 
-function rainbowColors() {}
+function randomColors() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+function rainbowColors() {
+  const rainbowDivs = document.querySelectorAll('.divs');
+  rainbowDivs.forEach((divs2) => {
+    divs2.addEventListener('mouseover', () => {
+      divs2.style.backgroundColor = randomColors();
+    });
+  });
+}
 
 gridBtn.addEventListener('click', () => {
   const grids = +prompt('Enter number of grids between 16-100: ');
@@ -50,3 +64,4 @@ gridBtn.addEventListener('click', () => {
 });
 
 resetBtn.addEventListener('click', resetGrid);
+rainbowBtn.addEventListener('click', rainbowColors);
