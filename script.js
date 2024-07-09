@@ -9,7 +9,7 @@ const opacityBtn = document.querySelector('.opacity-btn');
 const DEFAULT_GRID = 16;
 
 document.addEventListener('DOMContentLoaded', () => {
-  resetContainer();
+  defaultGrid();
 });
 
 function createGrid(size) {
@@ -27,8 +27,15 @@ function createGrid(size) {
   }
 }
 
-function resetContainer() {
+function defaultGrid() {
   createGrid(DEFAULT_GRID);
+}
+
+function resetGrid() {
+  const div = document.querySelectorAll('.divs');
+  div.forEach((divs) => {
+    divs.style.backgroundColor = 'white';
+  });
 }
 
 function rainbowColors() {}
@@ -42,5 +49,4 @@ gridBtn.addEventListener('click', () => {
   createGrid(grids);
 });
 
-resetBtn.addEventListener('click', resetContainer);
-// rainbowBtn.addEventListener('click');
+resetBtn.addEventListener('click', resetGrid);
