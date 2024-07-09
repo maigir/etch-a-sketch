@@ -7,6 +7,7 @@ const gridButton = document.querySelector('.select-grids');
 
 gridButton.addEventListener('click', () => {
   const grids = +prompt('Enter number of grids between 16-100: ');
+  console.log(grids);
 
   for (let i = 1; i <= grids; i++) {
     const newDiv = document.createElement('div');
