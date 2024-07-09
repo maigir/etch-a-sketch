@@ -57,6 +57,7 @@ button {
   backdrop-filter: blur(55px);
   background: linear-gradient(#6532b9, #232323);
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 button:active {
@@ -65,6 +66,11 @@ button:active {
 
 .reset-btn {
   top: 92%;
+}
+
+.erase-btn {
+  top: 92%;
+  right: 30%;
 }
 
 .divs {
