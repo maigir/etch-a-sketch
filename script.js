@@ -1,21 +1,16 @@
 'use strict';
 
-// Creating div's
-document.addEventListener('DOMContentLoaded', () => {
-  const divContainer = document.querySelector('.grid');
-  let newDiv;
+const containerForGrids = document.querySelector('.container-grids');
+const gridButton = document.querySelector('.select-grids');
 
-  for (let i = 0; i < 16 * 16; i++) {
-    newDiv = document.createElement('div');
-    newDiv.classList.add('grid-item');
-    divContainer.appendChild(newDiv);
+// Creating grids
+
+gridButton.addEventListener('click', () => {
+  const grids = +prompt('Enter number of grids between 16-100: ');
+
+  for (let i = 1; i <= grids; i++) {
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('divs');
+    containerForGrids.appendChild(newDiv);
   }
-
-  // Hover effect
-  const divItems = document.querySelectorAll('.grid-item');
-  divItems.forEach((item) => {
-    item.addEventListener('mouseover', () => {
-      item.style.backgroundColor = '#000';
-    });
-  });
 });
