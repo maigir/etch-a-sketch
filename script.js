@@ -5,11 +5,12 @@ const gridBtn = document.querySelector('.grids-btn');
 const resetBtn = document.querySelector('.reset-btn');
 const rainbowBtn = document.querySelector('.rainbow-btn');
 const opacityBtn = document.querySelector('.opacity-btn');
+const blackBtn = document.querySelector('.black-btn');
 
 const DEFAULT_GRID = 16;
 
 document.addEventListener('DOMContentLoaded', () => {
-  defaultGrid();
+  createGrid(DEFAULT_GRID);
 });
 
 function createGrid(size) {
@@ -25,10 +26,6 @@ function createGrid(size) {
     });
     containerForGrids.appendChild(newDiv);
   }
-}
-
-function defaultGrid() {
-  createGrid(DEFAULT_GRID);
 }
 
 function resetGrid() {
@@ -54,6 +51,15 @@ function rainbowColors() {
   });
 }
 
+function blackGrids() {
+  const blackGrids = document.querySelectorAll('.divs');
+  blackGrids.forEach((divs) => {
+    divs.addEventListener('mouseover', () => {
+      divs.style.backgroundColor = 'black';
+    });
+  });
+}
+
 gridBtn.addEventListener('click', () => {
   const grids = +prompt('Enter number of grids between 16-100: ');
   if (grids < 16 || grids > 100) {
@@ -65,3 +71,5 @@ gridBtn.addEventListener('click', () => {
 
 resetBtn.addEventListener('click', resetGrid);
 rainbowBtn.addEventListener('click', rainbowColors);
+// opacityBtn.addEventListener('click', changeOpacity);
+blackBtn.addEventListener('click', blackGrids);
