@@ -51,20 +51,11 @@ function rainbowColors() {
   });
 }
 
-function blackGrids() {
+function colorChangeGrid(property) {
   const blackGrids = document.querySelectorAll('.divs');
   blackGrids.forEach((divs) => {
     divs.addEventListener('mouseover', () => {
-      divs.style.backgroundColor = 'black';
-    });
-  });
-}
-
-function eraserGrid() {
-  const blackGrids = document.querySelectorAll('.divs');
-  blackGrids.forEach((divs) => {
-    divs.addEventListener('mouseover', () => {
-      divs.style.backgroundColor = 'white';
+      divs.style.backgroundColor = property;
     });
   });
 }
@@ -79,6 +70,12 @@ gridBtn.addEventListener('click', () => {
 });
 
 resetBtn.addEventListener('click', resetGrid);
-rainbowBtn.addEventListener('click', rainbowColors);
-eraserBtn.addEventListener('click', eraserGrid);
-blackBtn.addEventListener('click', blackGrids);
+rainbowBtn.addEventListener('click', () => {
+  rainbowColors();
+});
+eraserBtn.addEventListener('click', () => {
+  colorChangeGrid('white');
+});
+blackBtn.addEventListener('click', () => {
+  colorChangeGrid('black');
+});
